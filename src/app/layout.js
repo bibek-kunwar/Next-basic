@@ -1,5 +1,15 @@
+"use client"
 import './globals.css'
+import Head from 'next/head'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Inter } from 'next/font/google'
+import Sliderpage from './components/Sliderpage';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,9 +19,33 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+      </Head>
+
+
+      <body className={inter.className}>
+        <h1>hellow world</h1>
+        <div className="alert alert-primary" role="alert">
+          A simple primary alert—check it out!
+
+        </div>
+        <button type="button" className="btn btn-primary" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">Primary</button>
+
+        <Sliderpage/>
+        {children}
+
+
+
+        </body>
     </html>
   )
 }
