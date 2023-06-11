@@ -1,6 +1,6 @@
+"use client"
 import React from 'react';
-
-import Slider from 'react-slick';git
+import Slider from 'react-slick';
 
 const Sliderpage = () => {
   const settings = {
@@ -10,7 +10,11 @@ const Sliderpage = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '60px' // Adjust the value as needed
+    centerPadding: '60px', // Adjust the value as needed
+    autoplay: true, // Set autoplay to true
+    autoplaySpeed: 2000, // Set autoplay speed in milliseconds
+    cssEase: 'linear', // Set CSS easing for the autoplay animation
+   
   };
 
   return (
@@ -26,7 +30,7 @@ const Sliderpage = () => {
                 data-aos-duration="1000"
               >
                 <h2>Our Popular Products</h2>
-                <p>Karmacharya Offer wide range of bakery and food products.</p>
+                <p>Karmacharya Offer a wide range of bakery and food products.</p>
               </div>
               <Slider {...settings}>
                 <div className="product-wrapper">

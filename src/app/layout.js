@@ -6,10 +6,13 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Inter } from 'next/font/google'
-import Sliderpage from './components/Sliderpage';
+
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import Footer from './components/Footer';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,22 +29,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+       <title>Helllow</title>
+
       </Head>
 
 
       <body className={inter.className}>
-        <h1>hellow world</h1>
-        <div className="alert alert-primary" role="alert">
-          A simple primary alert—check it out!
 
-        </div>
-        <button type="button" className="btn btn-primary" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">Primary</button>
 
-        <Sliderpage/>
+
         {children}
+        <Footer/>
 
 
 
